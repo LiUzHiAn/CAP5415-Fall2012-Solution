@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5dcd9cb9-3702-45a6-8134-5fca0b3485db" name="Default Changelist" comment="" />
+    <list default="true" id="5dcd9cb9-3702-45a6-8134-5fca0b3485db" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Fall2012_PA1/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Fall2012_PA1/readme.md" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,13 +34,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="1697" />
+          <entry key="md" value="1804" />
           <entry key="py" value="2335" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="1692" />
+          <entry key="Markdown" value="1799" />
           <entry key="Python" value="2340" />
         </counts>
       </usages-collector>
@@ -79,8 +81,8 @@
         <entry file="file://$PROJECT_DIR$/Fall2012_PA1/readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="237">
-                <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+              <first_editor relative-caret-position="265">
+                <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -205,6 +207,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="DB Browser" />
       <window_info id="Favorites" side_tool="true" />
@@ -285,8 +288,8 @@
     <entry file="file://$PROJECT_DIR$/Fall2012_PA1/readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="237">
-            <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
+          <first_editor relative-caret-position="265">
+            <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
           </first_editor>
           <second_editor />
         </state>

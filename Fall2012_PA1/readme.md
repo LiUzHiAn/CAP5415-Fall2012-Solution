@@ -1,11 +1,19 @@
 ## Overview
-This PA include two task:
+This PA include two tasks:
 - The first is to implement convolution operation under different types of kernels and compare their outputs.
 - The second is to implement edge detection algorithm based on `Sobel` and `Prewitt` operators.
 
+You can check the manual `CAP5415_2012_PA1.pdf` for detail.
+## My result
 For the first task, I wrote the code to generate different size of Gaussian kernels and Average kernels, which are some basic smoothing kernels using in image de-blurring.
 And I used the `cv2.filter2D()` to complete the convolution operation.
 
+Here is the result:
+
+Input
+ ![balloonGrayNoisy](balloonGrayNoisy.jpg)
+Output
+ ![convolution-result](conv_result.png)
 For the second task, I implemented the edge detection algorithm as per following steps:
 ```python
         0. generate the operator
@@ -17,6 +25,10 @@ For the second task, I implemented the edge detection algorithm as per following
 
 And I got my best result under the following parameters:
  gaussian size--(11 x 11), threshold--11, operator--Prewitt, here is my result:
+
+Input 
+ ![buildingGray](buildingGray.jpg)
+Output
  ![edge-detection-result](edge_ksize_11.png)
  
  You can modify the configuration in `line 133` of `PA1.py` and feed in you own input.
@@ -25,3 +37,4 @@ And I got my best result under the following parameters:
 ```python
 python PA1.py
 ```
+You can check the code for detail handling and they are well self-explanatory. :-)
