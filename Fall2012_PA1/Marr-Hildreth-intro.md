@@ -29,7 +29,7 @@ And we can get the LoG operator easily. Here is the image of a LoG kernel with \
 
 ## Block diagram and pseudo-code
 The following image shows the overall processing of the algorithm. As mentioned above, using LoG operator directly is equal to Gaussian plus Laplacian. You can choose either way you want. 
-![](diagram.jpg)
+![](./img/diagram.jpg)
 
 Here is the pseudo-code. 
 ```python
@@ -91,3 +91,9 @@ Input:
 Output:
 
 ![](./result/linux.png)
+
+
+## References
+[1] D. Marr; E. C. Hildreth., Theory of edge detection, Proceedings of the Royal Society,
+London B, 207 (1980), pp. 187–217
+[2] H. Sponton; J. Cardelino, A Review of Classic Edge Detectors,2015
