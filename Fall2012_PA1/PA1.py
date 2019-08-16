@@ -34,13 +34,12 @@ def gaussian_kernel_generator(sigma):
 
 	for x in range(-sigma, sigma + 1):
 		for y in range(-sigma, sigma + 1):
-			r = np.sqrt(x * x + y * y)
-			GKernel[x + sigma, y + sigma] = (np.exp(-(r * r) / s)) / (np.pi * s)
+			r = x * x + y * y
+			GKernel[x + sigma, y + sigma] = np.exp(-r / s) / np.sqrt(np.pi * s)
 			sum_n += GKernel[x + sigma, y + sigma]
+
 	# normalize the kernel
-	for i in range(2 * sigma + 1):
-		for j in range(2 * sigma + 1):
-			GKernel[i, j] /= sum_n
+	GKernel /= sum_n
 
 	return GKernel
 
