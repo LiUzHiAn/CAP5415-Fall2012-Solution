@@ -8,23 +8,7 @@ second derivative. The below image is an intuitive explanation.
 ## Mathematical derivation  
 In this algorithm, the Laplacian of Gaussian(LoG) operator was proposed. It is a combined filter which has the same effects with Gaussian smoothing first and then calculating the 2-nd derivative using Laplacian operator.
 
-$$
-LoG \triangleq \nabla^{2} G(x, y)=\frac{\partial^{2}}{\partial^{2} x} G(x, y)+\frac{\partial^{2}}{\partial^{2} y} G(x, y)
-$$
-Where,
-$$
-\begin{aligned} \frac{\partial}{\partial x} G(x, y) &=-\frac{1}{\sqrt{2 \pi \sigma^{2}}} \frac{x}{\sigma^{2}} e^{-\left(x^{2}+y^{2}\right) / 2 \sigma^{2}} \\ \frac{\partial}{\partial y} G(x, y) &=-\frac{1}{\sqrt{2 \pi \sigma^{2}}} \frac{y}{\sigma^{2}} e^{-\left(x^{2}+y^{2}\right) / 2 \sigma^{2}} \\ \frac{\partial^{2}}{\partial^{2} x} G(x, y) &=\frac{1}{\sqrt{2 \pi \sigma^{2}}} \frac{x^{2}-\sigma^{2}}{\sigma^{4}} e^{-\left(x^{2}+y^{2}\right) / 2 \sigma^{2}} \end{aligned}
-$$
-
-$$
-\frac{\partial^{2}}{\partial^{2} y} G(x, y)=\frac{1}{\sqrt{2 \pi \sigma^{2}}} \frac{y^{2}-\sigma^{2}}{\sigma^{4}} e^{-\left(x^{2}+y^{2}\right) / 2 \sigma^{2}}
-$$
-
-Hence, we get 
-$$
-\operatorname{LoG}(x, y)=\frac{1}{\sqrt{2 \pi \sigma^{2}}} \frac{x^{2}+y^{2}-2 \sigma^{2}}{\sigma^{4}} e^{-\left(x^{2}+y^{2}\right) / 2 \sigma^{2}}
-$$
-
+![](./img/math.jpg)
 And we can get the LoG operator easily. Here is the image of a LoG kernel with \sigma=4 and n=31.
 
 ## Block diagram and pseudo-code
