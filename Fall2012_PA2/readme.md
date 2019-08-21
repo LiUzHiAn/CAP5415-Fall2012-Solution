@@ -18,9 +18,9 @@ Slide the trackBar, when the result is good enough, just knock down the space, t
 
 - Usage of pyramid blending
 ```
-$ python pyramid.py [imgA_path] [imgB_path] 
+$ python pyramid.py [imgA_path] [imgB_path] [layer]
 ```
-By default, I've configured the `imgA_path` and `imgB_path` as `./img/apple.jpg` and `./img/orange.jpg` respectively. Notice that the two images must be consistent with their shape (i.e. width,height,channel) 
+By default, I've configured the `imgA_path`,`imgB_path`,`layer` as `./img/apple.jpg`, `./img/orange.jpg`, `6` respectively. Notice that the two images must be consistent with their shape (i.e. width,height,channel) 
 
 ## My Result
 
@@ -48,7 +48,10 @@ Direct Blending
 
 ![Direct_blending](./result/Direct_blending.jpg)
 
-Pyramid Blending
+Pyramid Blending (with layer as 6)
 
-![Pyramid_blending](./result/Pyramid_blending.jpg)
+![Pyramid_blending](./result/Pyramid_blending-layer6.jpg)
+
+By increasing the layer parameter, you will find some noise in the generated picture. 
+![Noise ](./result/Pyramid_blending-layer8.jpg)
 

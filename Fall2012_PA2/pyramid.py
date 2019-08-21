@@ -100,7 +100,7 @@ def img_blending_using_pyramid(imgA, imgB, layer=6):
 	height, width, c = A.shape
 	direct_blending = np.hstack((A[:, 0: height // 2], B[:, height // 2:-1]))
 
-	cv2.imwrite('result/Pyramid_blending.jpg', generate_each)
+	cv2.imwrite('result/Pyramid_blending-layer%s.jpg'%layer, generate_each)
 	cv2.imwrite('result/Direct_blending.jpg', direct_blending)
 
 
@@ -108,8 +108,10 @@ if __name__ == '__main__':
 	parser = argparse.ArgumentParser()
 	parser.add_argument("--imgA", type=str, default="img/apple.jpg", help="full path of image A")
 	parser.add_argument("--imgB", type=str, default="img/orange.jpg", help="full path of image B")
+	parser.add_argument("--layer", type=int, default=6, help="total layers of the pyramids")
 
 	imgA = parser.parse_args().imgA
 	imgB = parser.parse_args().imgB
+	layer = parser.parse_args().layer
 
-	img_blending_using_pyramid(imgA, imgB)
+	img_blending_using_pyramid(imgA, imgB, layer)
