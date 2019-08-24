@@ -2,9 +2,9 @@
 ## Overview
 Here includes some of my experiments and implementation of some technics during lecture 4 to lecture 7, they are:
 
-- Harris Corner Detector algorithm from scratch using python and OpenCV.
-- Using Gaussian and Laplacian pyramids to blending images.
-
+- :heavy_check_mark: Harris Corner Detector algorithm from scratch using python and OpenCV.
+- :heavy_check_mark: Using Gaussian and Laplacian pyramids to blending images.
+- :pushpin: SIFT implementation (still updating ...  )
 ## Usage
 
 - Usage of Harris Corner Detector
