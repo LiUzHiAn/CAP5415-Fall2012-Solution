@@ -74,13 +74,13 @@ def img_blending_using_pyramid(imgA, imgB, layer=6):
 	# step 3
 	# 生成A图的拉普拉斯金字塔  (注意，高层的拉普拉斯金字塔在数组前面)
 	lpA = [gpa[layer - 1]]  # 最后一层拉普拉斯设置为对应的高斯层
-	for i in range(layer - 1, 0, -1):
-		L = gpa[i - 1] - cv2.pyrUp(gpa[i], dstsize=gpa[i - 1].shape[0:2])
+	for i in range(layer - 1, 0, -1):  # 45,52  90,103
+		L = gpa[i - 1] - cv2.pyrUp(gpa[i], dstsize=(gpa[i - 1].shape[1], gpa[i - 1].shape[0]))
 		lpA.append(L)
 	# 生成B图的拉普拉斯金字塔
 	lpB = [gpb[layer - 1]]  # 最后一层拉普拉斯设置为对应的高斯层
 	for i in range(layer - 1, 0, -1):
-		L = gpb[i - 1] - cv2.pyrUp(gpb[i], dstsize=gpb[i - 1].shape[0:2])
+		L = gpb[i - 1] - cv2.pyrUp(gpb[i], dstsize=(gpb[i - 1].shape[1], gpb[i - 1].shape[0]))
 		lpB.append(L)
 
 	# step 4
@@ -88,17 +88,21 @@ def img_blending_using_pyramid(imgA, imgB, layer=6):
 	for la, lb in zip(lpA, lpB):
 		rows, cols, channel = la.shape
 		l_item = np.hstack((la[:, 0:cols // 2], lb[:, cols // 2:]))
+		# l_item = np.vstack((la[0:rows // 2, :], lb[:rows // 2, :]))
+		# l_item = (la + lb) / 2
 		l_mixed.append(l_item)
 
 	# step 5 重建图片
+	generated_res = [l_mixed[0]]
 	generate_each = l_mixed[0]
 	for i in range(1, layer):
-		generate_each = cv2.pyrUp(generate_each) + l_mixed[i]
+		generate_each = cv2.pyrUp(generate_each, dstsize=(l_mixed[i].shape[1],l_mixed[i].shape[0])) + l_mixed[i]
+		generated_res.append(generate_each)
 
 	# 输出并保存到图片
 	# 直接相连
 	height, width, c = A.shape
-	direct_blending = np.hstack((A[:, 0: height // 2], B[:, height // 2:-1]))
+	direct_blending = np.hstack((A[:, 0: width // 2], B[:, width // 2:]))
 
 	cv2.imwrite('result/Pyramid_blending-layer%s.jpg'%layer, generate_each)
 	cv2.imwrite('result/Direct_blending.jpg', direct_blending)
